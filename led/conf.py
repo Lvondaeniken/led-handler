@@ -1,7 +1,6 @@
 from led.led_event import LedElements
 from led.led_group import LedGroup
 
-TIMEBASE_MS = 20
 
 LED_GROUPS = {
     LedElements.BALLSHOOTER: LedGroup(24),

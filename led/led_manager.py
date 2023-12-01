@@ -3,7 +3,8 @@ from time import sleep
 from led.led_event import LedEvent
 from led.color import LedColor
 from led.strip.strip import get_strip
-from led.conf import TIMEBASE_MS, LED_GROUPS
+from led.conf import LED_GROUPS
+from led.time_base import TIMEBASE_MS
 
 
 class LedManager(Process):

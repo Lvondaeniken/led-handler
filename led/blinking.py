@@ -1,7 +1,7 @@
 from typing import Optional
 from led.animations import AnimationInterface
 from led.color import LedColor
-from led.conf import TIMEBASE_MS
+from led.time_base import TIMEBASE_MS
 
 
 class BlinkingLight(AnimationInterface):
