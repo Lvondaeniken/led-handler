@@ -42,7 +42,6 @@ class LedGroup:
             ret = self.event_queue[0].get_next_frame()
             if ret is None:
                 print("event finished")
-                # delete animation if finished
                 self.event_queue.pop(0)
             else:
                 if len(ret) == self.led_count:

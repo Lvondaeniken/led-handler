@@ -2,6 +2,7 @@ from multiprocessing import Process, Queue
 from time import sleep
 from led.led_event import LedEvent
 from led.color import LedColor
+from led.elements import LedElements
 from led.strip.strip import get_strip
 from led.conf import LED_GROUPS
 from led.time_base import TIMEBASE_MS
@@ -38,4 +39,8 @@ class LedManager(Process):
     def check_new_events(self):
         while not self.toManager.empty():
             event: LedEvent = self.toManager.get()
-            self.led_groups[event.target].add_event(event)
+            if event.target == LedElements.ALL:
+                for group in self.led_groups.values():
+                    group.add_event(event)
+            else:
+                self.led_groups[event.target].add_event(event)

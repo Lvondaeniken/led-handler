@@ -11,3 +11,4 @@ class LedElements(Enum):
     TARGET1 = auto()
     TARGET2 = auto()
     TARGET3 = auto()
+    ALL = auto()
